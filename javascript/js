@@ -17,7 +17,7 @@ $.getJSON('https://randomuser.me/api/?results=12', function(data){
     putHTML += `<div class="card-img-container">`;
     putHTML += '<img src="' + result.picture.medium + '" class="card-img"></div>';
     putHTML += `<div class="card-info-container">`;
-    putHTML += `<h3 id="name" class="card-name cap">" + result.name.first + " " + result.name.last + "</h3>`;
+    putHTML += '<h3 id="name" class="card-name cap"> ' + result.name.first + ' '+ result.name.last + '</h3>';
   console.log(putHTML);
     $('.gallery').append(putHTML);
   })

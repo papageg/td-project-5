@@ -37,7 +37,7 @@ $.getJSON('https://randomuser.me/api/?results=12', function(data){
 
 
 
-    function empClickFunctions() {
+    function empClickFunctions(data) {
       empClickHTML = `<div class="modal-container">`;
       empClickHTML += `<div class="modal">`;
       empClickHTML += `<button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>`;
@@ -54,8 +54,10 @@ $.getJSON('https://randomuser.me/api/?results=12', function(data){
       empClickHTML += `</div>`;
 
           $('body').append(empClickHTML);
-    };
 
+    };
+    var empClass = document.querySelector('#gallery');
+    empClass.addEventListener('click', empClickFunctions);
       // <div class="modal-container">
       //     <div class="modal">
       //         <button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>
@@ -71,14 +73,15 @@ $.getJSON('https://randomuser.me/api/?results=12', function(data){
       //         </div>
       //     </div>
 
-      for (i = 0; i <= 12; i++){
-        $('.card').val(i).empClickFunctions;
-      }
-      var empClass = document.querySelector('#gallery');
-      empClass.addEventListener('click', empClickFunctions);
+      // for (i = 0; i <= 12; i++){
+      //   $('.card').val(i).empClickFunctions;
+      //
+      // }
+
     });
 
   });
+
 //END CARD
 
 //START EMPLOYEE CLICKED THIS IS WHERE THE POPUP IS WHEN YOU CLICK AN EMPLOYEE

@@ -42,7 +42,7 @@ $.getJSON('https://randomuser.me/api/?results=12', function(data){
       empClickHTML += `<div class="modal">`;
       empClickHTML += `<button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>`;
       empClickHTML += `<div class="modal-info-container">`;
-      empClickHTML += '<img class="modal-img" src="' + result.picture.medium  + ' alt="profile picture">';
+      empClickHTML += '<img class="modal-img" src="' + result.picture.medium  + 'alt="profile picture">';
       empClickHTML += '<h3 id="' + name + '" class="modal-name cap">' + result.name.first + ' '+ result.name.last + '</h3>';
       empClickHTML += '<p class="modal-text">' + result.email + '</p>';
       empClickHTML += '<p class="modal-text cap">' + result.location.city+ '</p>';
@@ -52,14 +52,32 @@ $.getJSON('https://randomuser.me/api/?results=12', function(data){
       empClickHTML += '<p class="modal-text">' + result.dob + '</p>';
       empClickHTML += `</div>`;
       empClickHTML += `</div>`;
-      $('body').append(empClickHTML);
+
+          $('body').append(empClickHTML);
+    };
+
+      // <div class="modal-container">
+      //     <div class="modal">
+      //         <button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>
+      //         <div class="modal-info-container">
+      //             <img class="modal-img" src="https://placehold.it/125x125" alt="profile picture">
+      //             <h3 id="name" class="modal-name cap">name</h3>
+      //             <p class="modal-text">email</p>
+      //             <p class="modal-text cap">city</p>
+      //             <hr>
+      //             <p class="modal-text">(555) 555-5555</p>
+      //             <p class="modal-text">123 Portland Ave., Portland, OR 97204</p>
+      //             <p class="modal-text">Birthday: 10/21/2015</p>
+      //         </div>
+      //     </div>
 
       for (i = 0; i <= 12; i++){
         $('.card').val(i).empClickFunctions;
       }
-    };
-    var empClass = document.querySelector('#gallery');
-    empClass.addEventListener('click', empClickFunctions);
+      var empClass = document.querySelector('#gallery');
+      empClass.addEventListener('click', empClickFunctions);
+    });
+
   });
 //END CARD
 
@@ -71,8 +89,3 @@ $.getJSON('https://randomuser.me/api/?results=12', function(data){
 
     // })
 //END EMPLOYEE CLICKED THIS IS WHERE THE POPUP IS WHEN YOU CLICK AN EMPLOYEE
-
-
-
-
-})

@@ -38,10 +38,10 @@ $.getJSON('https://randomuser.me/api/?results=12', function(data){
 
 $('.gallery').append(cardHTML);
 
-var $card = $('#gallery .card');
+var $card = $('.gallery');
 
 for (var i = 0 ; i <= $card.length; i++) {
-$($card[i]).click( function clickCard() {
+$($('.gallery')[i]).click( function clickCard() {
    empClickHTML = `<div class="modal-container">`;
    empClickHTML += `<div class="modal">`;
    empClickHTML += `<button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>`;

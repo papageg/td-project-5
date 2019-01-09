@@ -37,25 +37,30 @@ $.getJSON('https://randomuser.me/api/?results=12', function(data){
 
 
 $('.gallery').append(cardHTML);
-function clickCard() {
-  empClickHTML = `<div class="modal-container">`;
-  empClickHTML += `<div class="modal">`;
-  empClickHTML += `<button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>`;
-  empClickHTML += `<div class="modal-info-container">`;
-  empClickHTML += '<img class="modal-img" src="' + result.picture.medium  + '"alt="profile picture">';
-  empClickHTML += '<h3 id="' + name + '" class="modal-name cap">' + result.name.first + ' '+ result.name.last + '</h3>';
-  empClickHTML += '<p class="modal-text">' + result.email + '</p>';
-  empClickHTML += '<p class="modal-text cap">' + result.location.city+ '</p>';
-  empClickHTML += `<hr>`;
-  empClickHTML +=  '<p class="modal-text">' + result.phone +'</p>';
-  empClickHTML += '<p class="modal-text">' + result.location.street + '' + result.location.city + ' ' + result.location.state + ' ' + result.location.postcode +  '</p>';
-  empClickHTML += '<p class="modal-text">' + result.dob + '</p>';
-  empClickHTML += `</div>`;
-  empClickHTML += `</div>`;
-  $('body').append(empClickHTML);
-}
-for (var i = 0 ; i <= 12; i++) {
-   $card[i].addEventListener('click') ;
+
+var $card = $('#gallery .card');
+
+for (var i = 0 ; i <= $card.length; i++) {
+$card[i].addEventListener('click', clickCard , false) ;
+   function clickCard() {
+     empClickHTML = `<div class="modal-container">`;
+     empClickHTML += `<div class="modal">`;
+     empClickHTML += `<button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>`;
+     empClickHTML += `<div class="modal-info-container">`;
+     empClickHTML += '<img class="modal-img" src="' + result.picture.medium  + '"alt="profile picture">';
+     empClickHTML += '<h3 id="' + name + '" class="modal-name cap">' + result.name.first + ' '+ result.name.last + '</h3>';
+     empClickHTML += '<p class="modal-text">' + result.email + '</p>';
+     empClickHTML += '<p class="modal-text cap">' + result.location.city+ '</p>';
+     empClickHTML += `<hr>`;
+     empClickHTML +=  '<p class="modal-text">' + result.phone +'</p>';
+     empClickHTML += '<p class="modal-text">' + result.location.street + '' + result.location.city + ' ' + result.location.state + ' ' + result.location.postcode +  '</p>';
+     empClickHTML += '<p class="modal-text">' + result.dob + '</p>';
+     empClickHTML += `</div>`;
+     empClickHTML += `</div>`;
+
+     $('body').append(empClickHTML);
+   }
+
    }
 
 //
@@ -81,7 +86,8 @@ for (var i = 0 ; i <= 12; i++) {
 //   var carcard = $('#gallery .card');
 //   console.log(carcard[1])
 // });
-var $card = $('#gallery .card');
+
+
 
 
 

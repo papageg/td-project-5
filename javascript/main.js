@@ -45,6 +45,7 @@ arrayCards.push(cardHTML);
 });
 
 let empClickHTML;
+
 function empButton(empClickHTML) {
     empClickHTML = `<div class="modal-container">`;
     empClickHTML += `<div class="modal">`;
@@ -65,17 +66,9 @@ function empButton(empClickHTML) {
 
 
 
-if($('div .card').click() === true) {
-  console.log('worked');
-}
-for (i = 0; i <= 12; i++){
-  var dude = i - $(".card").val();
-  var selectCard = document.querySelectorAll('.card');
-  $(selectCard[dude]).append(empClickHTML);
 
-console.log($(selectCard[dude]));
-}
 //END CARD
+
 
 //START EMPLOYEE CLICKED THIS IS WHERE THE POPUP IS WHEN YOU CLICK AN EMPLOYEE
 

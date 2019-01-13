@@ -40,28 +40,36 @@ arrayCards.push(cardHTML);
 
 })
 //let clickedCard;
-
-
+//console.log(data.results[1]);
+for (i = 0; i < 12; i++){
+  const popCard = document.querySelectorAll('.card')[i];
+  popCard.addEventListener('click', function(e) {
+    let cardVal = popCard.getAttribute('value');
+$('body').append(`
+  <div class="modal-container">
+  <div class="modal">
+    <button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>
+    <div class="modal-info-container">
+    <img class="modal-img" src="${data.results[cardVal].picture.medium}" alt="profile picture">
+    <h3 id="name" class="modal-name cap">${data.results[cardVal].name.first} ${data.results[cardVal].name.last}</h3>
+    <p class="modal-text">${data.results[cardVal].email}</p>
+    <p class="modal-text cap">${data.results[cardVal].location.city}</p>
+    <hr>
+    <p class="modal-text">${data.results[cardVal].phone}</p>
+    <p class="modal-text">${data.results[cardVal].location.street} ${data.results[cardVal].location.city} ${data.results[cardVal].location.state} ${data.results[cardVal].location.postcode} </p>
+    <p class="modal-text">${data.results[cardVal].dob.date}</p>
+    </div>
+    </div>
+    </div>
+  `);
+  })
+}
 });
 
 let empClickHTML;
 
-function empButton(empClickHTML) {
-    empClickHTML = `<div class="modal-container">`;
-    empClickHTML += `<div class="modal">`;
-    empClickHTML += `<button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>`;
-    empClickHTML += `<div class="modal-info-container">`;
-    empClickHTML += '<img class="modal-img" src="' +  result.picture.medium + '"alt="profile picture">';
-    empClickHTML += '<h3 id="' + name + '" class="modal-name cap">' + result.name.first + ' '+ result.name.last + '</h3>';
-    empClickHTML += '<p class="modal-text">' + result.email + '</p>';
-    empClickHTML += '<p class="modal-text cap">' + result.location.city+ '</p>';
-    empClickHTML += `<hr>`;
-    empClickHTML +=  '<p class="modal-text">' + result.phone +'</p>';
-    empClickHTML += '<p class="modal-text">' + result.location.street + '' + result.location.city + ' ' + result.location.state + ' ' + result.location.postcode +  '</p>';
-    empClickHTML += '<p class="modal-text">' + result.dob + '</p>';
-    empClickHTML += `</div>`;
-    empClickHTML += `</div>`;
-    $('body').append(empClickHTML);
+function empButton() {
+
 };
 
 

@@ -5,7 +5,7 @@
 //     console.log(data);
 //   }
 // });
-var arrayCards = [];
+let arrayCards = [];
 
 $.getJSON('https://randomuser.me/api/?results=12', function (data){
   let cardHTML;
@@ -16,8 +16,29 @@ $.getJSON('https://randomuser.me/api/?results=12', function (data){
 //START SEARCH     THIS HOLDS ALL THE HTML FOR THE SEARCH BAR
   searchHTML = '<form action="#" method="get">';
   searchHTML += '<input type="search" id="search-input" class="search-input" placeholder="Search..."'
-  searchHTML += '<input type="submit" value="&#x1F50D;" id="serach-submit" class="search-submit"></form>'
+  searchHTML += '<input type="submit" id="serach-submit" class="search-submit"></form>'
   $('.search-container').append(searchHTML);
+
+  $('input #search').keyup( function () {
+  var filter = $(this).val();
+  // get the value of the input field so we can filter the results
+  if (($(data.results).toUpperCase().val()) ===$('#search-input').toUpperCase().val())
+  // $(data.results).find(".card:contains(" + filter + ")").hide();
+  console.log('Worked 1')
+});
+
+
+// $('input').on("keyup", function() {
+//   console.log('hi')
+//   var value = $(this).val().toLowerCase();
+//   var cardVal = $('.card')[i].val().toLowerCase;
+//   console.log($('.card')[1]);
+//   console.log(value);
+//   if (value === $('.card-name cap').val().toLowerCase()){
+//     console.log('somthing matched');
+// }
+// });
+
 //END SEARCH
 
 
@@ -43,6 +64,7 @@ arrayCards.push(cardHTML);
 //console.log(data.results[1]);
 for (i = 0; i < 12; i++){
   const popCard = document.querySelectorAll('.card')[i];
+  arrayCards.push(popCard);
   popCard.addEventListener('click', function(e) {
     let cardVal = popCard.getAttribute('value');
 $('body').append(`
@@ -62,8 +84,27 @@ $('body').append(`
     </div>
     </div>
   `);
-  })
+ $('#modal-close-btn').click(function() {
+  $('.modal-container').remove();
+});
+
+
+
+})
+$('input').on("keyup", function() {
+  //console.log('hi')
+  var value = $(this).val().toLowerCase();
+  //var cardVal = $(popCard).toLowerCase();
+  console.log(value);
+  console.log($(arrayCards).val())
+//  console.log(cardVal);
+  if (value === 1){
+    console.log('somthing matched');
 }
+});
+
+
+  }
 });
 
 let empClickHTML;

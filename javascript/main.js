@@ -19,13 +19,7 @@ $.getJSON('https://randomuser.me/api/?results=12', function (data){
   searchHTML += '<input type="submit" id="serach-submit" class="search-submit"></form>'
   $('.search-container').append(searchHTML);
 
-  $('input #search').keyup( function () {
-  var filter = $(this).val();
-  // get the value of the input field so we can filter the results
-  if (($(data.results).toUpperCase().val()) ===$('#search-input').toUpperCase().val())
-  // $(data.results).find(".card:contains(" + filter + ")").hide();
-  console.log('Worked 1')
-});
+
 
 
 // $('input').on("keyup", function() {
@@ -90,28 +84,24 @@ $('body').append(`
 
 
 
-})
-$('input').on("keyup", function() {
-  //console.log('hi')
-  var value = $(this).val().toLowerCase();
-  //var cardVal = $(popCard).toLowerCase();
-  console.log(value);
-  console.log($(arrayCards).val())
-//  console.log(cardVal);
-  if (value === 1){
-    console.log('somthing matched');
+});
 }
 });
+////////////////////////////////////////////////////////////
+// $('input').on("keyup", function() {
+//   //console.log('hi')
+//   var value = $(this).val().toLowerCase();
+//   //var cardVal = $(popCard).to
+//   console.log(value);
+//   if (value === ){
+//     console.log('somthing matched');
+// }
+// });
+////////////////////////////////////////////////////////////
 
 
-  }
-});
 
-let empClickHTML;
 
-function empButton() {
-
-};
 
 
 
